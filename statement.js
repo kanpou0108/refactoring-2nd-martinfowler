@@ -1,5 +1,5 @@
-const plays = require('./plays.json')
-const invoices = require('./invoices')
+import plays from './plays.js';
+import invoices from './invoices.js';
 
 function statement (invoice, plays) {
   return renderPlainText(createStatementData(invoice, plays));
