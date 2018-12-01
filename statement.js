@@ -1,7 +1,6 @@
-import createStatementData from './createStatementData.js';
-
-import plays from './plays.js';
-import invoices from './invoices.js';
+import createStatementData from './createStatementData';
+import plays from './plays';
+import invoices from './invoices';
 
 function statement (invoice, plays) {
   return renderPlainText(createStatementData(invoice, plays));
@@ -20,6 +19,7 @@ function renderPlainText(data, plays) {
 function htmlStatement (invoice, plays) {
   return renderHtml(createStatementData(invoice, plays));
 }
+
 function renderHtml (data) {
   let result = `<h1>Statement for ${data.customer}</h1>\n`;
   result += "<table>\n";
