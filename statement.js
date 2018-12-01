@@ -2,7 +2,13 @@ const plays = require('./plays.json')
 const invoices = require('./invoices')
 
 function statement (invoice, plays) {
-  let result = `Statement for ${invoice.customer}\n`;
+  const statementData = {};
+  statementData.customer = invoice.customer;
+  return renderPlainText(statementData, invoice, plays);
+}
+
+function renderPlainText(data, invoice, plays) {
+  let result = `Statement for ${data.customer}\n`;
   for (let perf of invoice.performances) {
     result += `  ${playFor(perf).name}: ${usd(amountFor(perf))} (${perf.audience} seats)\n`;
   }
