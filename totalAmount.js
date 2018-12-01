@@ -1,6 +1,6 @@
 const amountFor = require('./amountFor')
 
-function appleSauce(invoice) {
+function totalAmount(invoice) {
   let totalAmount = 0;
   for (let perf of invoice.performances) {
     totalAmount += amountFor(perf);
@@ -8,4 +8,4 @@ function appleSauce(invoice) {
   return totalAmount;
 }
 
-module.exports = appleSauce
+module.exports = totalAmount
