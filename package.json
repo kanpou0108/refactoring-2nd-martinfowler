@@ -6,7 +6,6 @@
   "author": "Junpei Ihara <seapig.dolphin2925@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.6"
