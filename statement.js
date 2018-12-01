@@ -8,7 +8,8 @@ function statement (invoice, plays) {
   return renderPlainText(statementData, plays);
 
   function enrichPerformance(aPerformance) {
-    const result = Object.assign({}, aPerformance);
+    // const result = Object.assign({}, aPerformance);
+    const result = { ...aPerformance };
     return result;
   }
 }
