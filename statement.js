@@ -2,8 +2,8 @@ const plays = require('./plays.json')
 const invoices = require('./invoices')
 const amountFor = require('./amountFor')
 const playFor = require('./playFor')
-const volumeCreditsFor = require('./volumeCreditsFor')
 const usd = require('./usd')
+const totalVolumeCredits = require('./totalVolumeCredits')
 
 function statement (invoice) {
   let totalAmount = 0;
@@ -15,13 +15,8 @@ function statement (invoice) {
     totalAmount += amountFor(perf);
   }
 
-  let volumeCredits = 0;
-  for (let perf of invoice.performances) {
-    volumeCredits += volumeCreditsFor(perf);
-  }
-
   result += `Amount owed is ${usd(totalAmount)}\n`;
-  result += `You earned ${volumeCredits} credits\n`;
+  result += `You earned ${totalVolumeCredits(invoice)} credits\n`;
   return result;
 }
 
